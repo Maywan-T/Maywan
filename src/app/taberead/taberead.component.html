@@ -1,0 +1,23 @@
+<table class= "table table bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">description</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tabes of tabe; let num = index">
+      <td>{{num}}</td>
+      <td>{{tabes.name}}</td>
+      <td>{{tabes.description}}</td>
+      <td>
+        <button color="warn" mat-flat-button (click) = "ondelete()">delete</button>
+        <button color="primary" mat-flat-button (click) = "onedit()">edit</button>
+      </td>
+    </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,19 @@
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1"> Name </label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" [(ngModel)] = "tabes.name" name="name">
+  
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1"> Description </label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)] = "tabes.description" name="description" ></textarea>
+    </div>
+      <button color="primary" mat-flat-button (click)="onSubmit()"> Submit </button>
+    </div>
+  
+  </form>
+  
+<div>
+  <p>name:{{tabes.name}}</p>
+  <p>description:{{tabes.description}}</p>
+</div>
+
