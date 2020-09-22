@@ -1,8 +1,10 @@
 import { formatCurrency } from '@angular/common';
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl} from "@angular/forms";
-import {Tabe} from '../Tabe';
+import {Tabe} from '../tabe';
 import {Router} from '@angular/router';
+import {TabeService} from '../tabe.service'
+
 
 
 @Component({
@@ -12,23 +14,30 @@ import {Router} from '@angular/router';
 })
 export class TabecreateComponent implements OnInit {
 
-  constructor(private router: Router,) { }
-  @Input() tabe: Tabe;
+  constructor(private router: Router,private tabeService: TabeService) { }
+  tabes = new Tabe();
 
   ngOnInit(): void {
     
   }
   
 
- tabes: any = {name:"", description:""}
+//  tabes: any = {name:"", description:""}
 
- onSubmit(){
-  console.log("submitted");
-  console.log(this.tabes.data);
-  this.tabes
-  // this.router.navigate(['/read'])
-  
-  
+//  onSubmit(){
+//   console.log("submitted");
+//   console.log(this.tabes.data);
+//   this.tabes
+//   // this.router.navigate(['/read'])
+//  }
+
+ addPerson(){
+   this.tabeService.addPerson(this.tabes)
+   .subscribe(data => {
+     console.log(data)
+     this.router.navigate(['/read'])
+   })
+
  }
-
+ 
 }

@@ -1,1 +1,5 @@
-export class Tabe{id: number; name:string;  description:string}
+export class Tabe{
+  id: number; 
+  name:string;  
+  description:string
+}
