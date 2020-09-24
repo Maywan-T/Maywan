@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let tabes of tabe; let num = index">
-      <td>{{num}}</td>
+    <tr *ngFor="let tabes of tabe; let i = index">
+      <td>{{i + 1}}</td>
       <td>{{tabes.name}}</td>
       <td>{{tabes.description}}</td>
       <td>
-        <button color="warn" mat-flat-button (click) = "ondelete()">delete</button>
+        <button color="warn" mat-flat-button (click) = "ondelete(tabes.id)">delete</button>
         <button color="primary" mat-flat-button (click) = "onedit()">edit</button>
       </td>
     </tr>

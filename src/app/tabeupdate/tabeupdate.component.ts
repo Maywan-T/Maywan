@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Tabe} from '../tabe';
+import {Router} from '@angular/router';
+import {TabeService} from '../tabe.service'
 
 @Component({
   selector: 'app-tabeupdate',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabeupdateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,private tabeService: TabeService) { }
+  tabes = new Tabe;
 
   ngOnInit(): void {
   }
   
+  onEdit(){
+    
+  }
 }

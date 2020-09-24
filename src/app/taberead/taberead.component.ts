@@ -30,12 +30,15 @@ export class TabereadComponent implements OnInit {
   }
   
    
-  ondelete(){
-    console.log("deleted")
-  }
-  onedit(){
-    console.log("edited")
-  }
+  ondelete(id){
+    this.tabeService.deletePerson(id)
+    .subscribe(data => {
+      console.log(data)
+      this.getAllPeople();
+    })
+      
+    } 
+
 
   getAllPeople(){
     this.tabeService.getPeople()

@@ -28,6 +28,16 @@ export class TabeService {
     console.log(body)
     return this.http.post(this.baseUrl + 'people', body, {'headers': headers})
   }
+  
+  deletePerson(id): Observable<any>{
+    return this.http.delete(this.baseUrl + 'people'+'/'+id);
+  }
 
+  editPerson(tabe: Tabe){
+    const headers = {'content-type': 'application/json'}
+    const body = JSON.stringify(tabe);
+    console.log(body)
+    return this.http.post(this.baseUrl + 'people', body, {'headers': headers})
+  }
 }
 
